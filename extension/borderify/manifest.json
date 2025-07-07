@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Translator",
+  "version": "1.0",
+
+  "description": "Adds a red border to all webpages matching mozilla.org.",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.akinformatica.it/*"],
+      "js": ["injector.js"]
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": ["borderify.js", "utils.js"],
+    "matches": ["*://*.akinformatica.it/*"]
+  }]
+}
