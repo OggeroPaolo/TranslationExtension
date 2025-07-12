@@ -3,7 +3,7 @@
   "name": "Translator",
   "version": "1.0",
 
-  "description": "Adds a red border to all webpages matching mozilla.org.",
+  "description": "Allows for automatic translation using a locally running llm",
 
   "icons": {
     "48": "icons/border-48.png"
@@ -11,12 +11,13 @@
 
   "content_scripts": [
     {
-      "matches": ["*://*.akinformatica.it/*"],
+      "matches": ["*://*.youtube.com/*"],
       "js": ["injector.js"]
     }
   ],
   "web_accessible_resources": [{
     "resources": ["borderify.js", "utils.js"],
-    "matches": ["*://*.akinformatica.it/*"]
-  }]
+    "matches": ["*://*.youtube.com/*"]
+  }],
+  "host_permissions": ["*://*/*"]
 }

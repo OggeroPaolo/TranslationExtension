@@ -22,10 +22,11 @@ btn.style.cssText = `
 `;
 
 btn.addEventListener('click', async () => {
+  console.log(`Starting translation`);
   const start = performance.now();
   await translateAllTextNodesParallel();
   const end = performance.now();
-  console.log(`myFunction took ${end - start} milliseconds`);
+  console.log(`Translation took ${end - start} milliseconds`);
 
   // get all nodes in the body of the document that are text nodes
   /*
