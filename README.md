@@ -1,4 +1,5 @@
 The extension performs translation of a web page through injection of javascript files that call a locally run fastAPI server that manages comunication with a locally run llm using ollama.
+
 The extension is currently configured to run on the youtube.com website.
 
 To add the extension to firefox:
