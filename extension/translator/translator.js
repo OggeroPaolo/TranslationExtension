@@ -8,7 +8,7 @@ document.head.appendChild(css);
 
 const btn = document.createElement("button")
 btn.className = "btn btn-primary";
-btn.innerText = "Button";
+btn.innerText = "Translate";
 btn.style.cssText = `
   position: fixed;
   bottom: 10px;
@@ -27,26 +27,6 @@ btn.addEventListener('click', async () => {
   await translateAllTextNodesParallel();
   const end = performance.now();
   console.log(`Translation took ${end - start} milliseconds`);
-
-  // get all nodes in the body of the document that are text nodes
-  /*
-  const textNodes = getAllTextNodes();
-  for (let node of textNodes) {
-    const response = await fetch(SERVER_URL + `/translate?text=${node.textContent}&lang=English`);
-    node.textContent = (await response.json()).translation;
-  }
-  console.log("TRANSLATION DONE!")
-  */
-  /*
-  for (let el of visibleElementsWithText) {
-    let childrens = Array.from(el.childNodes);
-    for (let ch of childrens) {
-      if (ch.nodeType === 3) {
-        ch.textContent = "modified text";
-      }
-    }
-  }
-  */
 });
 
 document.body.appendChild(btn);
